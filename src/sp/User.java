@@ -32,8 +32,8 @@ public class User {
         user.followingList.add(this);
     }
 
-    public void createPlaylist(String Title, User Owner) {
-        this.behavior.createPlaylist(Title, Owner);
+    public void createPlaylist(String Title) {
+        this.behavior.createPlaylist(Title, this);
     }
 
     public void playMusic(Music music) {
