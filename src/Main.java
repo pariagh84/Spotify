@@ -33,21 +33,10 @@ public class Main {
 
             // Test Music Creation
             System.out.println("\n===== TESTING MUSIC CREATION =====");
-            Music song1 = new Music();
-            song1.setTitle("SomerSault");
-            song1.setSinger(user1);
-
-            Music song2 = new Music();
-            song2.setTitle("Uptown Funk");
-            song2.setSinger(user2);
-
-            Music song3 = new Music();
-            song3.setTitle("Blinding Lights");
-            song3.setSinger(user3);
-
-            Music song4 = new Music();
-            song4.setTitle("SomerSault");  // Same title as song1 but different singer
-            song4.setSinger(user2);
+            Music song1 = new Music("SomerSault", user1);
+            Music song2 = new Music("Uptown Funk", user2);
+            Music song3 = new Music("Blinding Lights", user3);
+            Music song4 = new Music("SomerSault",user2); // Same title as song1 but different singer
 
             // Add music to allMusics list
             Music.allMusics.add(song1);
@@ -94,7 +83,7 @@ public class Main {
             // Test Regular User trying to create playlist
             System.out.println("\nRegular user tries to create playlist:");
             try {
-                user1.createPlaylist("My Playlist", user1);
+                user1.createPlaylist("My Playlist");
                 System.out.println("Should not reach here!");
             } catch (InvalidOperationException e) {
                 System.out.println("Caught expected exception: " + e.getMessage());
@@ -105,7 +94,7 @@ public class Main {
             System.out.println("User bob buys premium for 3 months");
             user2.buyPremium(user2, 3);
             System.out.println("Premium user creates playlist:");
-            user2.createPlaylist("Bob's Favorites", user2);
+            user2.createPlaylist("Bob's Favorites");
             System.out.println("Bob now has " + user2.playLists.size() + " playlists");
 
             // Test playlist operations

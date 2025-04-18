@@ -9,8 +9,7 @@ public class Playlist {
     private final ArrayList<Music> playlist = new ArrayList<>();
 
     //Constructor
-    public Playlist(String Title, User Owner) {
-    }
+    public Playlist(String Title, User Owner) {}
 
     public void editTitle(String Title, User owner, String password) {
         if (!owner.getPassword().equals(password)) {
